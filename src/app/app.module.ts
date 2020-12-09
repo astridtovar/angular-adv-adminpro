@@ -1,22 +1,12 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
+import { AuthModule } from './auth/auth.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HeaderComponent } from './shared/header/header.component';
 import { NgModule } from '@angular/core';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { PagesComponent } from './pages/pages.component';
-
-
+import { PagesModule } from './pages/pages.module';
 @NgModule({
-  declarations: [
-    AppComponent,
-    BreadcrumbsComponent,
-    SidebarComponent,
-    HeaderComponent,
-    PagesComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, PagesModule, AuthModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
