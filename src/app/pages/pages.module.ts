@@ -1,3 +1,4 @@
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './../components/components.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,12 +16,14 @@ import { SharedModule } from './../shared/shared.module';
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
+    AccountSettingsComponent,
   ],
   exports: [
     DashboardComponent,
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
+    AccountSettingsComponent,
   ],
   imports: [
     CommonModule,
