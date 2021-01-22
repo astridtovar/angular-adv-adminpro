@@ -7,8 +7,10 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { ProgressComponent } from './progress/progress.component';
+import { PromesasComponent } from './promesas/promesas.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './../shared/shared.module';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { SharedModule } from './../shared/shared.module';
     Grafica1Component,
     PagesComponent,
     AccountSettingsComponent,
+    PromesasComponent,
+    RxjsComponent,
   ],
   exports: [
     DashboardComponent,
@@ -24,6 +28,7 @@ import { SharedModule } from './../shared/shared.module';
     Grafica1Component,
     PagesComponent,
     AccountSettingsComponent,
+    PromesasComponent,
   ],
   imports: [
     CommonModule,
