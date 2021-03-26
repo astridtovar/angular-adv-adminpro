@@ -2,15 +2,16 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { CommonModule } from '@angular/common';
 import { ComponentsModule } from './../components/components.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Grafica1Component } from './grafica1/grafica1.component';
 import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
+import { PerfilComponent } from './perfil/perfil.component';
 import { ProgressComponent } from './progress/progress.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './../shared/shared.module';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
+    PerfilComponent,
   ],
   exports: [
     DashboardComponent,
@@ -36,6 +38,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     RouterModule,
     FormsModule,
     ComponentsModule,
+    ReactiveFormsModule
   ],
 })
 export class PagesModule {}
