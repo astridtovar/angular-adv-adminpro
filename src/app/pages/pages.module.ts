@@ -12,6 +12,7 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RouterModule } from '@angular/router';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { SharedModule } from './../shared/shared.module';
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SharedModule } from './../shared/shared.module';
     PromesasComponent,
     RxjsComponent,
     PerfilComponent,
+    UsuariosComponent,
   ],
   exports: [
     DashboardComponent,

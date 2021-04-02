@@ -34,6 +34,14 @@ export class UsuarioService {
     return this.usuario.uid || '';
   }
 
+  get headers() {
+    return {
+      headers: {
+        'x-token': this.token,
+      },
+    };
+  }
+
   googleInit() {
     return new Promise((resolve) => {
       gapi.load('auth2', () => {
@@ -90,12 +98,15 @@ export class UsuarioService {
   }
 
   actualizarPeril(data: { email: string; nombre: string; role: string }) {
-    data = { ...data, role: this.usuario.role };
-    return this.http.put(`${base_url}/usuarios/${this.uid}`, data, {
-      headers: {
-        'x-token': this.token,
-      },
-    });
+    data = {
+      ...data,
+      role: this.usuario.role,
+    };
+    return this.http.put(
+      `${base_url}/usuarios/${this.uid}`,
+      data,
+      this.headers
+    );
   }
 
   login(formData: LoginForm) {
@@ -111,6 +122,43 @@ export class UsuarioService {
       tap((res: any) => {
         localStorage.setItem('token', res.response);
       })
+    );
+  }
+
+  cargarUsuarios(desde: number = 0) {
+    const url = `${base_url}/usuarios?desde=${desde}`;
+    return this.http.get(url, this.headers).pipe(
+      map((resp: any) => {
+        const usuarios = resp.response.usuarios.map(
+          (user) =>
+            new Usuario(
+              user.nombre,
+              user.email,
+              '',
+              user.img,
+              user.google,
+              user.role,
+              user.uid
+            )
+        );
+        return {
+          usuarios,
+          total: resp.response.total,
+        };
+      })
+    );
+  }
+
+  eliminarUsuario(usuario: Usuario) {
+    const url = `${base_url}/usuarios/${usuario.uid}`;
+    return this.http.delete(url, this.headers);
+  }
+
+  guardarUsuario(usuario: Usuario) {
+    return this.http.put(
+      `${base_url}/usuarios/${usuario.uid}`,
+      usuario,
+      this.headers
     );
   }
 }
