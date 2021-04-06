@@ -24,6 +24,9 @@
   max-height: 30px;
   border-radius: 100%;
 }
+.w75 {
+  width: 75px;
+}
 .w140 {
   width: 140px;
 }

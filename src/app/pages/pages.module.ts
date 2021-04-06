@@ -17,6 +17,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { SharedModule } from './../shared/shared.module';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MedicoComponent } from './mantenimientos/medicos/medico.component';
     HospitalesComponent,
     MedicosComponent,
     MedicoComponent,
+    BusquedaComponent,
   ],
   exports: [
     DashboardComponent,
