@@ -123,7 +123,7 @@ export class UsuarioService {
   login(formData: LoginForm) {
     return this.http.post(`${base_url}/login`, formData).pipe(
       tap((res: any) => {
-        this.guardarLocalStorage(res.response.token, res.menu);
+        this.guardarLocalStorage(res.response, res.menu);
       })
     );
   }
@@ -131,7 +131,7 @@ export class UsuarioService {
   loginGoogle(token: string) {
     return this.http.post(`${base_url}/login/google`, { token }).pipe(
       tap((res: any) => {
-        this.guardarLocalStorage(res.response.token, res.menu);
+        this.guardarLocalStorage(res.response, res.menu);
       })
     );
   }
